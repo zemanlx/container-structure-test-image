@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "=> Push the image"
+docker push "${DOCKER_REPO}"
