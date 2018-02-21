@@ -1,6 +1,8 @@
 # Container Structure Tests - Alpine Docker Image
 
-This repository offers `Dockerfile` and instructions for building container based on Alpine Linux that contains [container-structure-test](https://github.com/GoogleCloudPlatform/container-structure-test) binary. For your convenience, you can use automatic build from Docker Hub [zemanlx/container-structure-test](https://hub.docker.com/r/zemanlx/container-structure-test) tags:
+This repository offers `Dockerfile` and instructions for building container based on Alpine Linux that contains [container-structure-test](https://github.com/GoogleCloudPlatform/container-structure-test) binary.
+
+For your convenience, you can use automatic build from Docker Hub [zemanlx/container-structure-test](https://hub.docker.com/r/zemanlx/container-structure-test) tags:
 - `v0.2.1-alpine`
 - `v0.2.0-alpine`
 
@@ -22,7 +24,7 @@ docker run -i --rm \
   -v ${PWD}:/test zemanlx/container-structure-test:v0.2.1-alpine \
     -test.v \
     -image zemanlx/container-structure-test:v0.2.1-alpine \
-    /test/structure-tests.yaml \
+    /test/structure-tests.yaml
 ```
 
 ## Build image
