@@ -7,7 +7,7 @@ RUN apk add --no-cache \
     && go get github.com/golang/dep/cmd/dep
 
 # container-structure-test default version
-ARG CST_REF=v0.2.0
+ARG CST_REF=v0.2.1
 ENV SOURCE_PATH=/go/src/github.com/GoogleCloudPlatform/container-structure-test
 
 RUN git clone \
