@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/zemanlx/container-structure-test-image.svg?branch=master)](https://travis-ci.org/zemanlx/container-structure-test-image)
+
 # Container Structure Tests - Alpine Docker Image
 
 This repository offers `Dockerfile` and instructions for building container based on Alpine Linux that contains [container-structure-test](https://github.com/GoogleCloudPlatform/container-structure-test) binary.
