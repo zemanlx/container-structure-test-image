@@ -2,9 +2,9 @@ schemaVersion: "2.0.0"
 
 fileExistenceTests:
   - name: 'CST'
-    path: '/usr/local/bin/container-structure-test'
+    path: '/bin/container-structure-test'
     shouldExist: true
     permissions: '-rwxr-xr-x'
 
 metadataTest:
-  entrypoint: ["/usr/local/bin/container-structure-test"]
+  entrypoint: ["/bin/container-structure-test"]
