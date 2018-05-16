@@ -9,10 +9,10 @@ RUN apk add --no-cache \
 
 # container-structure-test default version
 ARG CST_REF=v1.1.0
-ENV SOURCE_PATH=/go/src/github.com/GoogleCloudPlatform/container-structure-test
+ENV SOURCE_PATH=/go/src/github.com/GoogleContainerTools/container-structure-test
 
 RUN git clone \
-    --depth 1 https://github.com/GoogleCloudPlatform/container-structure-test.git \
+    --depth 1 https://github.com/GoogleContainerTools/container-structure-test.git \
     --branch "$CST_REF" \
     "$SOURCE_PATH"
 
