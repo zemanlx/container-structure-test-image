@@ -1,4 +1,4 @@
-FROM golang:1.10.0-alpine3.7 AS builder
+FROM golang:1.10.2-alpine3.7 AS builder
 
 RUN apk add --no-cache \
       gcc=6.4.0-r5 \
