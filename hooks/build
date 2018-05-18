@@ -2,7 +2,7 @@
 
 echo "=> Building the container"
 
-export CST_REF=v1.2.1
+export CST_REF=v1.2.2
 docker build \
   --build-arg CST_REF=${CST_REF} \
   --tag ${DOCKER_REPO}:${CST_REF}-alpine \
