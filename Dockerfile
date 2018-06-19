@@ -1,14 +1,14 @@
 FROM golang:1.10.2-alpine3.7 AS builder
 
 RUN apk add --no-cache \
-      gcc=6.4.0-r5 \
-      git=2.15.0-r1 \
-      make=4.2.1-r0 \
-      musl-dev=1.1.18-r3 \
+      gcc~=6.4 \
+      git~=2.15 \
+      make~=4.2 \
+      musl-dev~=1.1 \
     && go get github.com/golang/dep/cmd/dep
 
 # container-structure-test default version
-ARG CST_REF=v1.2.2
+ARG CST_REF=v1.3.0
 ENV SOURCE_PATH=/go/src/github.com/GoogleContainerTools/container-structure-test
 
 RUN git clone \
