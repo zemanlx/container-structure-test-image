@@ -4,7 +4,7 @@ services:
 # Use generic image to cut start-up time
 language: generic
 env:
-  CST_REF: v1.3.0
+  CST_REF: v1.4.0
   HADOLINT: "/tmp/hadolint"
 install:
   # Download hadolint binary and set it as executable
