@@ -1,8 +1,8 @@
-FROM golang:1.10.2-alpine3.7 AS builder
+FROM golang:1.10.3-alpine3.8 AS builder
 
 RUN apk add --no-cache \
       gcc~=6.4 \
-      git~=2.15 \
+      git~=2.18 \
       make~=4.2 \
       musl-dev~=1.1 \
     && go get github.com/golang/dep/cmd/dep
@@ -24,6 +24,6 @@ RUN VERSION=$(git describe --tags || echo "$CST_REF-$(git describe --always)") m
   && cp out/container-structure-test /
 
 # Distro image
-FROM alpine:3.7
+FROM alpine:3.8
 COPY --from=builder /container-structure-test /bin/
 ENTRYPOINT ["/bin/container-structure-test"]
