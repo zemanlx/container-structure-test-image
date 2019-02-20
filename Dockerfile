@@ -1,14 +1,14 @@
-FROM golang:1.10.3-alpine3.8 AS builder
+FROM golang:1.11.5-alpine3.9 AS builder
 
 RUN apk add --no-cache \
-      gcc~=6.4 \
-      git~=2.18 \
-      make~=4.2 \
-      musl-dev~=1.1 \
-    && go get github.com/golang/dep/cmd/dep
+    gcc~=8.2 \
+    git~=2.20 \
+    make~=4.2 \
+    musl-dev~=1.1 \
+  && go get github.com/golang/dep/cmd/dep
 
 # container-structure-test default version
-ARG CST_REF=v1.7.0
+ARG CST_REF=v1.8.0
 ENV SOURCE_PATH=/go/src/github.com/GoogleContainerTools/container-structure-test
 
 RUN git clone \
@@ -24,6 +24,6 @@ RUN VERSION=$(git describe --tags || echo "$CST_REF-$(git describe --always)") m
   && cp out/container-structure-test /
 
 # Distro image
-FROM alpine:3.8
+FROM alpine:3.9
 COPY --from=builder /container-structure-test /bin/
 ENTRYPOINT ["/bin/container-structure-test"]
