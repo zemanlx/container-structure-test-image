@@ -4,7 +4,7 @@ services:
 # Use generic image to cut start-up time
 language: generic
 env:
-  CST_REF: v1.7.0
+  CST_REF: v1.8.0
   HADOLINT: "/tmp/hadolint"
 install:
   # Download hadolint binary and set it as executable
@@ -21,8 +21,8 @@ script:
   - git ls-files --exclude='Dockerfile*' --ignored | xargs --max-lines=1 ${HADOLINT}
   # structure test (self-test)
   - docker run -i --rm
-      -v /var/run/docker.sock:/var/run/docker.sock
-      -v ${PWD}:/test container-structure-test:${CST_REF}-alpine
-        test
-        --image container-structure-test:${CST_REF}-alpine
-        --config /test/structure-tests.yaml
+    -v /var/run/docker.sock:/var/run/docker.sock
+    -v ${PWD}:/test container-structure-test:${CST_REF}-alpine
+    test
+    --image container-structure-test:${CST_REF}-alpine
+    --config /test/structure-tests.yaml
