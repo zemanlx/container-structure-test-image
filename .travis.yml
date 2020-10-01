@@ -8,7 +8,7 @@ env:
   HADOLINT: "/tmp/hadolint"
 install:
   # Download hadolint binary and set it as executable
-  - curl -sL -o ${HADOLINT} "https://github.com/hadolint/hadolint/releases/download/v1.10.3/hadolint-$(uname -s)-$(uname -m)"
+  - curl -sL -o ${HADOLINT} "https://github.com/hadolint/hadolint/releases/download/v1.18.0/hadolint-$(uname -s)-$(uname -m)"
     && chmod 700 ${HADOLINT}
   - docker build
     --build-arg CST_REF=${CST_REF}
@@ -16,7 +16,7 @@ install:
     .
 script:
   # markdown lint
-  - docker run --rm -i -v $PWD:/lint/input:ro zemanlx/remark-lint:0.1.0 --frail .
+  - docker run --rm -i -v $PWD:/lint/input:ro zemanlx/remark-lint:0.1.5 --frail .
   # Dockerfile lint
   - git ls-files --exclude='Dockerfile*' --ignored | xargs --max-lines=1 ${HADOLINT}
   # structure test (self-test)
